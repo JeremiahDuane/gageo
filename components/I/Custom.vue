@@ -29,6 +29,7 @@ const styles = computed(() => {
   <IWallTent v-else-if="isIcon(Icon.WALL_TENT)" :fill="color" :class="styles" />
   <IWater v-else-if="isIcon(Icon.WATER)" :fill="color" :class="styles" />
   <IWell v-else-if="isIcon(Icon.WELL)" :fill="color" :class="styles" />
+  <IDog v-else-if="isIcon(Icon.DOG)" :fill="color" :class="styles" />
   <ILocation v-else-if="isIcon(Icon.LOCATION)" :fill="color" :class="styles" />
   <ICompass v-else-if="isIcon(Icon.COMPASS)" :fill="color" :class="styles" />
   <IRemove v-else-if="isIcon(Icon.REMOVE)" :fill="color" :class="styles" />

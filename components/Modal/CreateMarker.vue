@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from '#ui/types';
-import type { Marker } from '~/types/Marker';
+import type { NewMarker } from '~/types/Marker';
 import { MarkerSchema, type MarkerSchemaType } from '~/schemas/Marker';
 import { parseIcon } from '~/schemas/Icon';
 import { Marker as MarkerClass } from '~/classes/Marker';
@@ -11,11 +11,11 @@ const { coords, locatedAt } = useGeolocation();
 const markers = useState<MarkerClass[]>('markers');
 const submitting = ref<boolean>();
 
-const state = reactive<Marker>({
-  id: '<CLIENT>',
-  username: '<CLIENT>',
-  title: '',
-  position: { latitude: 0, longitude: 0 },
+const state = reactive<NewMarker>({
+  id: undefined,
+  username: undefined,
+  title: undefined,
+  position: undefined,
   description: undefined,
   icon: undefined,
   color: undefined,
@@ -31,9 +31,8 @@ async function onSubmit(event: FormSubmitEvent<MarkerSchemaType>) {
   if (data && !error) {
     const createdMarker = new MarkerClass({ ...event.data, ...data });
     markers.value = [...markers.value, createdMarker];
-
     // reset form
-    state.title = '';
+    state.title = undefined;
     state.description = undefined;
     state.icon = undefined;
     state.color = undefined;
@@ -53,7 +52,7 @@ async function onSubmit(event: FormSubmitEvent<MarkerSchemaType>) {
           <UInput v-model="state.description" />
         </UFormGroup>
         <UFormGroup label="Icon" name="icon">
-          <span class="flex gap-2 w-full">
+          <span class="flex gap-2 w-full h-8">
             <USelectMenu v-model="state.icon" :options="IconOptions" option-attribute="name" class="w-full">
               <template #label>
                 <span v-if="state.icon" class="flex gap-2 justify-center items-center whitespace-nowrap">
@@ -77,4 +76,3 @@ async function onSubmit(event: FormSubmitEvent<MarkerSchemaType>) {
     </template>
   </Modal>
 </template>
-~/schemas/Icon

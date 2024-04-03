@@ -10,3 +10,13 @@ export type Marker = {
   description?: string;
   color?: string;
 };
+
+export type NewMarker = {
+  id?: string;
+  username?: string;
+  title?: string;
+  position?: Location;
+  icon?: Icon;
+  description?: string;
+  color?: string;
+};
