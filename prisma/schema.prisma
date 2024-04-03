@@ -1,0 +1,55 @@
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Icon {
+  BEE_BOX
+  BEE_HIVE
+  CAMP_GROUND
+  HOMESTEAD
+  LOCATION
+  OFFICE
+  PIN
+  USER
+  WALL_TENT
+  WATER
+  WELL
+}
+
+model Marker {
+  id          String    @id @default(uuid())
+  username    String
+  title       String
+  description String?
+  color       String?
+  position    Location?
+  icon        Icon?
+  createdBy   User?     @relation(fields: [username], references: [username])
+}
+
+model User {
+  username   String    @id @default(uuid())
+  name       String?
+  position   UserLocation?
+  setMarkers Marker[]
+}
+
+model UserLocation {
+  username      String  @id
+  marker        User    @relation(fields: [username], references: [username])
+  latitude      Decimal
+  longitude     Decimal
+}
+
+model Location {
+  markerId      String  @id
+  marker        Marker  @relation(fields: [markerId], references: [id])
+  latitude      Decimal
+  longitude     Decimal
+}
