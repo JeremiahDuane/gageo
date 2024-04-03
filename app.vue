@@ -10,6 +10,6 @@ useHead({
 });
 </script>
 <template>
-  <!-- <VitePwaManifest /> -->
+  <VitePwaManifest />
   <NuxtPage />
 </template>

@@ -3,9 +3,9 @@ import type { Marker } from '~/classes/Marker';
 import { Icon } from '~/schemas/Icon';
 
 const markers = useState<Marker[]>('markers');
-const isButtonsExpanded = ref<boolean>();
-const isDeleteView = useState<boolean>('deleteView');
-const isUserView = useState<boolean>('userView');
+const isButtonsExpanded = useState<boolean>('navExpanded', () => false);
+const isDeleteView = useState<boolean>('deleteView', () => false);
+const isUserView = useState<boolean>('userView', () => false);
 
 const handleExpanded = () => {
   isButtonsExpanded.value = !isButtonsExpanded.value;
@@ -13,13 +13,13 @@ const handleExpanded = () => {
 const handleDelete = () => {
   isDeleteView.value = !isDeleteView.value;
 };
-const handleFindUsers = async () => {
+const handleFindUsers = () => {
   isUserView.value = !isUserView.value;
 };
 </script>
 
 <template>
-  <main id="page" class="max-w-full overflow-x-hidden relative w-full h-full">
+  <main class="max-w-full overflow-x-hidden relative w-full h-full">
     <Map />
     <nav class="absolute bottom-4 left-4 grid grid-cols-2 w-fit">
       <NavIconButton
