@@ -13,13 +13,15 @@ enum Icon {
   BEE_HIVE
   CAMP_GROUND
   HOMESTEAD
-  LOCATION
   OFFICE
   PIN
-  USER
   WALL_TENT
   WATER
   WELL
+  TREE
+  FLAG
+  SEEDLING
+  DOG
 }
 
 model Marker {

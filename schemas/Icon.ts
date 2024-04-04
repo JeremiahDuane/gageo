@@ -8,6 +8,9 @@ export enum Icon {
   WALL_TENT = 'WALL_TENT',
   WATER = 'WATER',
   WELL = 'WELL',
+  FLAG = 'FLAG',
+  SEEDLING = 'SEEDLING',
+  TREE = 'TREE',
   DOG = 'DOG',
   // Nav
   USER = 'USER',
@@ -27,6 +30,7 @@ export const IconOptions = [
   Icon.WALL_TENT,
   Icon.WATER,
   Icon.WELL,
+  Icon.TREE,
   Icon.PIN,
 ];
 
