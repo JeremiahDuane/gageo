@@ -23,13 +23,15 @@ export enum Icon {
 export const IconOptions = [
   Icon.BEE_BOX,
   Icon.BEE_HIVE,
-  Icon.DOG,
   Icon.CAMP_GROUND,
+  Icon.DOG,
+  Icon.FLAG,
   Icon.HOMESTEAD,
   Icon.OFFICE,
   Icon.WALL_TENT,
   Icon.WATER,
   Icon.WELL,
+  Icon.SEEDLING,
   Icon.TREE,
   Icon.PIN,
 ];

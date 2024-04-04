@@ -53,7 +53,7 @@ async function onSubmit(event: FormSubmitEvent<MarkerSchemaType>) {
         </UFormGroup>
         <UFormGroup label="Icon" name="icon">
           <span class="flex gap-2 w-full h-8">
-            <USelectMenu v-model="state.icon" :options="IconOptions" option-attribute="name" class="w-full">
+            <USelectMenu v-model="state.icon" :options="IconOptions" option-attribute="name" class="h-full w-full">
               <template #label>
                 <span v-if="state.icon" class="flex gap-2 justify-center items-center whitespace-nowrap">
                   <ICustom :icon="state.icon" :color="state.color" size="sm" />
@@ -68,7 +68,7 @@ async function onSubmit(event: FormSubmitEvent<MarkerSchemaType>) {
                 </span>
               </template>
             </USelectMenu>
-            <UInput v-model="state.color" type="color" class="w-full"> </UInput>
+            <UInput v-model="state.color" type="color" class="h-full w-full" />
           </span>
         </UFormGroup>
         <UButton type="submit" :disabled="submitting"> Submit </UButton>

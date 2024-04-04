@@ -29,6 +29,6 @@ const handleOpen = () => {
     >
       <ICustom :icon="icon" />
     </UButton>
-    <UModal v-model="isOpen"><slot></slot></UModal>
+    <UModal v-model="isOpen" :ui="{ container: 'items-center' }"><slot></slot></UModal>
   </div>
 </template>

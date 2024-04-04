@@ -34,5 +34,8 @@ const styles = computed(() => {
   <ICompass v-else-if="isIcon(Icon.COMPASS)" :fill="color" :class="styles" />
   <IRemove v-else-if="isIcon(Icon.REMOVE)" :fill="color" :class="styles" />
   <IPerson v-else-if="isIcon(Icon.PERSON)" :fill="color" :class="styles" />
+  <ISeedling v-else-if="isIcon(Icon.SEEDLING)" :fill="color" :class="styles" />
+  <ITree v-else-if="isIcon(Icon.TREE)" :fill="color" :class="styles" />
+  <IFlag v-else-if="isIcon(Icon.FLAG)" :fill="color" :class="styles" />
   <IPin v-else :fill="color" :class="styles" />
 </template>
