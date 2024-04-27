@@ -60,6 +60,11 @@ export default defineNuxtConfig({
           type: 'image/png',
         },
         {
+          src: '/pwa/apple-touch-icon-120x120.png',
+          sizes: '120x120',
+          type: 'image/png',
+        },
+        {
           src: '/pwa/apple-touch-icon-180x180.png',
           sizes: '180x180',
           type: 'image/png',

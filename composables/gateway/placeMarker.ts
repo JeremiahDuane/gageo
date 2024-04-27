@@ -1,7 +1,7 @@
-import type { Marker } from '~/types/Marker';
+import type { NewMarker } from '~/types/Marker';
 import { $gateway } from '.';
 
 // Synchronous
-export function $placeMarker(marker: Marker) {
+export function $placeMarker(marker: NewMarker) {
   return $gateway('/api/placeMarker', marker);
 }

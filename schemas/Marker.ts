@@ -12,4 +12,15 @@ export const MarkerSchema = z.object({
   position: LocationSchema,
 });
 
+export const NewMarkerSchema = z.object({
+  id: z.string().optional(),
+  username: z.string().optional(),
+  title: z.string().optional(),
+  color: z.string().optional(),
+  description: z.string().optional(),
+  icon: z.nativeEnum(Icon).optional(),
+  position: LocationSchema,
+});
+
 export type MarkerSchemaType = z.output<typeof MarkerSchema>;
+export type NewMarkerSchemaType = z.output<typeof NewMarkerSchema>;

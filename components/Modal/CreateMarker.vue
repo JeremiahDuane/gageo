@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from '#ui/types';
 import type { NewMarker } from '~/types/Marker';
-import { MarkerSchema, type MarkerSchemaType } from '~/schemas/Marker';
+import { NewMarkerSchema, type NewMarkerSchemaType } from '~/schemas/Marker';
 import { parseIcon } from '~/schemas/Icon';
 import { Marker as MarkerClass } from '~/classes/Marker';
 import { $placeMarker } from '~/composables/gateway/placeMarker';
@@ -25,7 +25,7 @@ watch(locatedAt, () => {
   state.position = { latitude: coords.value.latitude, longitude: coords.value.longitude };
 });
 
-async function onSubmit(event: FormSubmitEvent<MarkerSchemaType>) {
+async function onSubmit(event: FormSubmitEvent<NewMarkerSchemaType>) {
   submitting.value = true;
   const [data, error] = await $placeMarker(event.data);
   if (data && !error) {
@@ -44,7 +44,7 @@ async function onSubmit(event: FormSubmitEvent<MarkerSchemaType>) {
   <Modal>
     <template #header> Create a Marker </template>
     <template #content>
-      <UForm :schema="MarkerSchema" :state="state" class="space-y-4" @submit="onSubmit">
+      <UForm :schema="NewMarkerSchema" :state="state" class="space-y-4" @submit="onSubmit">
         <UFormGroup label="Title" name="title">
           <UInput v-model="state.title" />
         </UFormGroup>

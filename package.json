@@ -27,7 +27,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@nuxt/ui": "^2.15.1",
+    "@nuxt/ui": "^2.15.2",
     "@prisma/client": "^5.12.0",
     "@sidebase/nuxt-auth": "^0.7.0",
     "@vite-pwa/nuxt": "^0.6.0",

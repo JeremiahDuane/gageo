@@ -6,7 +6,6 @@ export default defineEventHandler(
   requireAuth(async (event) => {
     const username = await getUser(event);
     const marker = await readBody(event);
-
     delete marker.id;
     delete marker.username;
     try {
