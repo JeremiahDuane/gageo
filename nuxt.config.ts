@@ -6,6 +6,29 @@ export default defineNuxtConfig({
   alias: {
     '@gateway': '~/composables/gateway',
   },
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0',
+      meta: [
+        {
+          name: 'apple-mobile-web-app-capable',
+          content: 'yes',
+        },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'white-translucent',
+        },
+      ],
+      link: [
+        {
+          rel: 'apple-touch-icon',
+          type: 'image/png',
+          href: '/pwa/apple-touch-icon-180x180.png',
+        },
+      ],
+    },
+  },
   postcss: {
     plugins: {
       'tailwindcss/nesting': {},
